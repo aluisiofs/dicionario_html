@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="">
     <style>
         body {
-            background-color:black;
+            background-color:#1b2fe2;
         }
 
         p {
@@ -33,28 +33,31 @@
     <p>Tag de vídeo permite colocar na tela um vídeo local ou da internet.</p>
     <img src="tag-video.svg" width="300x" />
 
-    <h2>Tag de Geolocation</h2>
-    <p></p>
-    <button onclick="getLocation()">Try It</button>
+    <h2>Tag de Geolocalização</h2> 
+    <p>Tag para Titulo</p>
+<p>Este código JavaScript utiliza a API de geolocalização do navegador para obter a posição atual do usuário e exibi-la na página web.</p>
 
-<p id="demo"></p>
-
-<script>
-const x = document.getElementById("demo");
+<script><p>Usada para inserir odigo em Javascript</p>
+const x = document.getElementById("demo"); // Seleciona o elemento com o id "demo" para exibir a localização.
 
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+  if (navigator.geolocation) { // Verifica se o navegador suporta a geolocalização.
+    navigator.geolocation.getCurrentPosition(showPosition); // Se suportado, obtém a posição atual e chama a função showPosition.
   } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    x.innerHTML = "Geolocation is not supported by this browser."; // Se não for suportado, exibe uma mensagem de erro.
   }
 }
 
 function showPosition(position) {
+  // Atualiza o conteúdo do elemento com id "demo" para mostrar a latitude e longitude.
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
 </script>
+
+<p>A função <code>getLocation</code> verifica se a geolocalização é suportada pelo navegador. <br/> Se for, solicita a posição atual e chama a função <code>showPosition</code> para exibir a latitude e longitude.</p>
+
+<p>Se a geolocalização não for suportada, uma mensagem de erro é exibida no elemento com o id "demo".</p>
 
 </body>
 </html>
