@@ -37,15 +37,16 @@
     <p>Este código JavaScript utiliza a API de geolocalização do navegador para obter a posição atual do usuário e exibi-la na página web.</p>
     <button onclick="getLocation()">Obter Localização</button>
     <p id="demo"></p>
+    <img src="tag-video.svg" width="300" alt="Tag de Vídeo" />
 
-    <script><p>Codigo JavaScript</p>
+    <script>
     // A função getLocation verifica se a geolocalização é suportada pelo navegador. Se for, solicita a posição atual e chama a função showPosition.
     function getLocation() {
       const x = document.getElementById("demo"); // Seleciona o elemento com o id "demo" para exibir a localização.
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition); // Se suportado, obtém a posição atual e chama a função showPosition.
       } else { 
-        x.innerHTML = "Geolocation is not supported by this browser."; // Se não for suportado, exibe uma mensagem de erro.
+        x.innerHTML = "Geolocalização não suporta da pelo seu navegador."; // Se não for suportado, exibe uma mensagem de erro.
       }
     }
 
