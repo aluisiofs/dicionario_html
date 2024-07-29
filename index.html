@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="">
     <style>
         body {
-            background-color: orangered;
+            background-color:black;
         }
 
         p {
@@ -33,19 +33,28 @@
     <p>Tag de vídeo permite colocar na tela um vídeo local ou da internet.</p>
     <img src="tag-video.svg" width="300x" />
 
-    <h2>Tag de vídeo</h2>
-        <p>Tag de vídeo permite colocar na tela um vídeo local ou da internet.</p>
-    <img src="tag-video.svg" width="300x" />
+    <h2>Tag de Geolocation</h2>
+    <p></p>
+    <button onclick="getLocation()">Try It</button>
 
-    <h3>Tag de vídeo</h3>
-        <p>Tag de vídeo permite colocar na tela um vídeo local ou da internet.</p>
-    <img src="tag-video.svg" width="300x" />
+<p id="demo"></p>
 
-    <h4>Tag de vídeo</h4>
-        <p>Tag de vídeo permite colocar na tela um vídeo local ou da internet.</p>
-    <img src="tag-video.svg" width="300x" />
-        <h2>Tag de vídeo</h2>
-    <p>Tag de vídeo permite colocar na tela um vídeo local ou da internet.</p>
-    <img src="tag-video.svg" width="300x" />
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
 </body>
 </html>
